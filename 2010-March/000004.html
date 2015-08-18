@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Photoropter-announce] Photoropter 0.1.0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/photoropter-announce/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:photoropter-announce%40lists.berlios.de?Subject=Re%3A%20%5BPhotoropter-announce%5D%20Photoropter%200.1.0&In-Reply-To=%3C20100309215537.24f92aa6%40vulcan.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000003.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Photoropter-announce] Photoropter 0.1.0</H1>
+    <B>Robert Fendt</B> 
+    <A HREF="mailto:photoropter-announce%40lists.berlios.de?Subject=Re%3A%20%5BPhotoropter-announce%5D%20Photoropter%200.1.0&In-Reply-To=%3C20100309215537.24f92aa6%40vulcan.local%3E"
+       TITLE="[Photoropter-announce] Photoropter 0.1.0">robertfendt at users.berlios.de
+       </A><BR>
+    <I>Tue Mar  9 21:55:37 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000003.html">[Photoropter-announce] Photoropter 0.0.6
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello all,
+
+I just released version 0.1.0 of Photoropter. This one has seen
+quite a lot of changes and refactoring. I hope the API will be
+more or less stable from now on. The emphasis for the near
+future lies on bug fixing anyway, since the optics part of
+Photoropter is more or less feature-complete.
+
+Notable enhancements over Photoropter 0.0.6:
+
+* phtrtest has been renamed to phtrx. The name change seemed
+  appropriate, since the application evolved from a simple test
+  bed to a full-fledged and quite useful image transformation
+  application which even rivals fulla in some regards.
+* Lens geometry conversion is now supported. Photoropter
+  currently supports conversion to and from the following lens
+  geometries:
+  o Rectilinear/gnomonic
+  o Equidistant (fisheye)
+  o Equisolid (fisheye)
+  o Stereographic (fisheye)
+  o Orthographic (fisheye).
+* Lots of refactoring and namespace restructuring which
+  hopefully improves the overall code structure.
+* The image transform has now distinct 'pixel' and 'subpixel'
+  queues. Some models work with both (e.g. PTLens), while others
+  only will work in the pixel queue (e.g. geometry conversion).
+* Support for automatic scaling of the result image to suppress
+  black and/or coloured borders (experimental).
+
+Regards,
+Robert
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000003.html">[Photoropter-announce] Photoropter 0.0.6
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/photoropter-announce">More information about the Photoropter-announce
+mailing list</a><br>
+</body></html>

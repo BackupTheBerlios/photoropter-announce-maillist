@@ -1,0 +1,88 @@
+From robertfendt at users.berlios.de  Wed Mar  3 00:08:52 2010
+From: robertfendt at users.berlios.de (Robert Fendt)
+Date: Wed, 3 Mar 2010 00:08:52 +0100
+Subject: [Photoropter-announce] Photoropter 0.0.6
+Message-ID: <20100303000852.63fb5606@vulcan.local>
+
+Hello everyone,
+
+I just released version 0.0.6 of Photoropter. Like in the 0.0.5
+release, most of the changes happened inside the library, while
+the API stayed more or less stable.
+
+Apart from many small bug fixes (including Visual Studio fixes)
+and a successful compilation test on Win64, the most notable
+changes are:
+
+* Rewrite of phtrtest: now allows to access a greater subset of
+  Photoropter's functions (including runtime selection of
+  interpolation type and oversampling); also much cleaner code
+  structure.
+* Command line syntax approximating the one of fulla: -r, -g,
+  -b, -c and -x are the same now (so phtrtest can now replicate
+  fulla's results in many cases).
+* PTLens TCA correction ('fulla-style') fully working and
+  producing results identical to fulla.
+* Linear scaler model implemented: can be used both for image
+  scaling and for simple linear TCA correction (i.e., the same
+  model lensfun supports).
+
+Note: since I had to compare their results anyway, I took a look
+at transformation times of lensfun's tmod as well. Applying
+linear TCA, PTLens distortion correction and global linear
+scaling to a 12 megapixel image takes about 10 seconds using
+phtrtest on a single CPU (Lanczos-2 interpolation, no
+oversampling). tmod takes roughly the same amount of time. Since
+lensfun's implementation is very speed-conscientious (to a point
+even where I personally regard its style as much 'too C'),
+that's very good news, I think.
+
+However, everything lensfun does is (at least to my knowledge)
+currently strictly single-threaded. Using both cores of my
+machine, phtrtest finishes the task in about 5 seconds (20 when
+2x oversampling is active).
+
+Regards,
+Robert
+
+
+From robertfendt at users.berlios.de  Tue Mar  9 21:55:37 2010
+From: robertfendt at users.berlios.de (Robert Fendt)
+Date: Tue, 9 Mar 2010 21:55:37 +0100
+Subject: [Photoropter-announce] Photoropter 0.1.0
+Message-ID: <20100309215537.24f92aa6@vulcan.local>
+
+Hello all,
+
+I just released version 0.1.0 of Photoropter. This one has seen
+quite a lot of changes and refactoring. I hope the API will be
+more or less stable from now on. The emphasis for the near
+future lies on bug fixing anyway, since the optics part of
+Photoropter is more or less feature-complete.
+
+Notable enhancements over Photoropter 0.0.6:
+
+* phtrtest has been renamed to phtrx. The name change seemed
+  appropriate, since the application evolved from a simple test
+  bed to a full-fledged and quite useful image transformation
+  application which even rivals fulla in some regards.
+* Lens geometry conversion is now supported. Photoropter
+  currently supports conversion to and from the following lens
+  geometries:
+  o Rectilinear/gnomonic
+  o Equidistant (fisheye)
+  o Equisolid (fisheye)
+  o Stereographic (fisheye)
+  o Orthographic (fisheye).
+* Lots of refactoring and namespace restructuring which
+  hopefully improves the overall code structure.
+* The image transform has now distinct 'pixel' and 'subpixel'
+  queues. Some models work with both (e.g. PTLens), while others
+  only will work in the pixel queue (e.g. geometry conversion).
+* Support for automatic scaling of the result image to suppress
+  black and/or coloured borders (experimental).
+
+Regards,
+Robert
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Photoropter-announce] Photoropter 0.0.6
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/photoropter-announce/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:photoropter-announce%40lists.berlios.de?Subject=Re%3A%20%5BPhotoropter-announce%5D%20Photoropter%200.0.6&In-Reply-To=%3C20100303000852.63fb5606%40vulcan.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000004.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Photoropter-announce] Photoropter 0.0.6</H1>
+    <B>Robert Fendt</B> 
+    <A HREF="mailto:photoropter-announce%40lists.berlios.de?Subject=Re%3A%20%5BPhotoropter-announce%5D%20Photoropter%200.0.6&In-Reply-To=%3C20100303000852.63fb5606%40vulcan.local%3E"
+       TITLE="[Photoropter-announce] Photoropter 0.0.6">robertfendt at users.berlios.de
+       </A><BR>
+    <I>Wed Mar  3 00:08:52 CET 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000004.html">[Photoropter-announce] Photoropter 0.1.0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3">[ date ]</a>
+              <a href="thread.html#3">[ thread ]</a>
+              <a href="subject.html#3">[ subject ]</a>
+              <a href="author.html#3">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello everyone,
+
+I just released version 0.0.6 of Photoropter. Like in the 0.0.5
+release, most of the changes happened inside the library, while
+the API stayed more or less stable.
+
+Apart from many small bug fixes (including Visual Studio fixes)
+and a successful compilation test on Win64, the most notable
+changes are:
+
+* Rewrite of phtrtest: now allows to access a greater subset of
+  Photoropter's functions (including runtime selection of
+  interpolation type and oversampling); also much cleaner code
+  structure.
+* Command line syntax approximating the one of fulla: -r, -g,
+  -b, -c and -x are the same now (so phtrtest can now replicate
+  fulla's results in many cases).
+* PTLens TCA correction ('fulla-style') fully working and
+  producing results identical to fulla.
+* Linear scaler model implemented: can be used both for image
+  scaling and for simple linear TCA correction (i.e., the same
+  model lensfun supports).
+
+Note: since I had to compare their results anyway, I took a look
+at transformation times of lensfun's tmod as well. Applying
+linear TCA, PTLens distortion correction and global linear
+scaling to a 12 megapixel image takes about 10 seconds using
+phtrtest on a single CPU (Lanczos-2 interpolation, no
+oversampling). tmod takes roughly the same amount of time. Since
+lensfun's implementation is very speed-conscientious (to a point
+even where I personally regard its style as much 'too C'),
+that's very good news, I think.
+
+However, everything lensfun does is (at least to my knowledge)
+currently strictly single-threaded. Using both cores of my
+machine, phtrtest finishes the task in about 5 seconds (20 when
+2x oversampling is active).
+
+Regards,
+Robert
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000004.html">[Photoropter-announce] Photoropter 0.1.0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3">[ date ]</a>
+              <a href="thread.html#3">[ thread ]</a>
+              <a href="subject.html#3">[ subject ]</a>
+              <a href="author.html#3">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/photoropter-announce">More information about the Photoropter-announce
+mailing list</a><br>
+</body></html>

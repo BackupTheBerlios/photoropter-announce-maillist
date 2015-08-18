@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Photoropter-announce] Photoropter 0.0.5
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/photoropter-announce/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:photoropter-announce%40lists.berlios.de?Subject=Re%3A%20%5BPhotoropter-announce%5D%20Photoropter%200.0.5&In-Reply-To=%3C20100221161546.19f89ac6%40vulcan.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000001.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Photoropter-announce] Photoropter 0.0.5</H1>
+    <B>Robert Fendt</B> 
+    <A HREF="mailto:photoropter-announce%40lists.berlios.de?Subject=Re%3A%20%5BPhotoropter-announce%5D%20Photoropter%200.0.5&In-Reply-To=%3C20100221161546.19f89ac6%40vulcan.local%3E"
+       TITLE="[Photoropter-announce] Photoropter 0.0.5">robertfendt at users.berlios.de
+       </A><BR>
+    <I>Sun Feb 21 16:15:46 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000001.html">[Photoropter-announce] Photoropter 0.0.4
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi everyone,
+
+I have just released Photoropter version 0.0.5. Lots of
+refactoring on the inside, but only small changes to the
+'public' API. However, 0.0.5 features quite some noticeable
+enhancements. Source archives in different formats can be found
+on the download page:
+
+<A HREF="http://developer.berlios.de/project/showfiles.php?group_id=11258">http://developer.berlios.de/project/showfiles.php?group_id=11258</A>
+
+The most important changes in Photoropter 0.0.5 are:
+
+* Refactoring to make image transformation more agnostic of
+  pixel format (preparation for alpha-channel handling). The
+  results of this are not immediately visible on the outside,
+  but it improved the code quality significantly I think.
+* The documentation now contains only 'public' parts of API by
+  default.
+* Lanczos interpolation support is working correctly (and
+  reasonably fast). The speed penalty of Lanczos-2 compared to
+  bilinear interpolation is about 75% (125% for Lanczos-3). The
+  results show noticeably better retention of fine details, so
+  it is not a bad tradeoff.
+* RGBA support. The library can now fully deal with alpha
+  channel data; alpha information will be subject to all
+  geometric transformations (and ignored in colour
+  transformations).
+* The PTLens model can now use different parameters on separate
+  channels; this should enable fulla-style TCA correction
+  (untested as yet).
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000001.html">[Photoropter-announce] Photoropter 0.0.4
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#2">[ date ]</a>
+              <a href="thread.html#2">[ thread ]</a>
+              <a href="subject.html#2">[ subject ]</a>
+              <a href="author.html#2">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/photoropter-announce">More information about the Photoropter-announce
+mailing list</a><br>
+</body></html>
